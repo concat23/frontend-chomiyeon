@@ -24,6 +24,9 @@ function App() {
               <Route path='/employees' element={<ListCmyEmployeeComponent />}></Route>
               {/* http://localhost:3000/employees/create/employee */}
               <Route path='/employees/create/employee' element={<CmyEmployeeComponent />}></Route>
+               {/* http://localhost:3000/employees/update/employee/{id} */}
+               <Route path="/employees/update/employee/:id" element={<CmyEmployeeComponent />} />
+
           </Routes>
           <FooterComponent />
         </div>  

@@ -1,15 +1,80 @@
 /* --------- Cmy Employee Component --------- */
 
+/* YourComponent.css */
 .custom-input input {
-    border: none;
-    border-bottom: 1px solid #ced4da; /* Default border color */
-    border-radius: 0;
-    box-shadow: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add transition effect */
-  
+  border: none;
+  border-bottom: 2px solid #ced4da; /* Default border color */
+  position: relative;
+}
+
+.custom-input input::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Initial height of the border */
+  background-color: #ced4da; /* Initial border color */
+  transition: background-color 0.3s ease; /* Only animate the background-color property */
+}
+
+.custom-input input:focus::before {
+  background-color: #17a2b8; /* Updated border color on focus */
+}
+
+.invalid-feedback {
+  display: none;
+  opacity: 0;
+  color: #dc3545; /* Error text color */
+  font-size: 14px;
+  margin-top: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.custom-input input.is-invalid + .invalid-feedback {
+  display: block;
+  opacity: 1;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .custom-input input:focus {
-    border-color: #80bdff; /* Updated border color on focus */
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.25); /* Add box shadow on focus */
+  to {
+    opacity: 1;
   }
+}
+
+
+/* ---------- Notification Message ----------- */
+/* style.css */
+
+.custom-notification {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.success {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.error {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.warning {
+  background-color: #ff9800;
+  color: #fff;
+}
+
+.info {
+  background-color: #2196F3;
+  color: #fff;
+}
+
+
+
