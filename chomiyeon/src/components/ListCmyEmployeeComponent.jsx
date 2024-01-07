@@ -1,9 +1,14 @@
 import React, {useEffect, useState} from 'react'
 import { listCmyEmployees } from '../services/CmyEmployeeService'
+import { useNavigate } from 'react-router-dom'
 
 function  ListCmyEmployeeComponent() {
   
     const [cmyEmployees, setCmyEmployees] = useState([])
+
+    const navigator = useNavigate()
+
+
 
     useEffect(() =>{
         listCmyEmployees().then((response) => {
@@ -12,6 +17,10 @@ function  ListCmyEmployeeComponent() {
             console.error(error)
         })
     },[])
+
+    function addNewCmyEmployee(){
+        navigator('/employees/create/employee')
+    }
 
     // const dummyData = [
     //     {
@@ -39,6 +48,7 @@ function  ListCmyEmployeeComponent() {
   return (
     <div className='container'>
         <div className='text-center font-weight-bold fs-1 fs-md-2 fs-lg-3 fs-xl-4'>List of employees</div>
+        <button className="btn btn-light mb-2 border" onClick={addNewCmyEmployee}>Add Employee</button>
         <table className='table table-striped'>
             <thead>
                 <tr>

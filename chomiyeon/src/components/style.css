@@ -1,0 +1,15 @@
+/* --------- Cmy Employee Component --------- */
+
+.custom-input input {
+    border: none;
+    border-bottom: 1px solid #ced4da; /* Default border color */
+    border-radius: 0;
+    box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add transition effect */
+  
+  }
+  
+  .custom-input input:focus {
+    border-color: #80bdff; /* Updated border color on focus */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.25); /* Add box shadow on focus */
+  }

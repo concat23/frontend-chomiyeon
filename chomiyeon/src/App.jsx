@@ -6,17 +6,29 @@ import HelloWorld from './HelloWorld'
 import ListCmyEmployeeComponent from './components/ListCmyEmployeeComponent'
 import HeaderComponent from './components/HeaderComponent'
 import FooterComponent from './components/FooterComponent'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import CmyEmployeeComponent from './components/CmyEmployeeComponent'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className='horizontal-container'>
-        <HeaderComponent />
-        <ListCmyEmployeeComponent />
-        <FooterComponent />
-      </div>  
+      <BrowserRouter>
+        <div className='horizontal-container'>
+          <HeaderComponent />
+          <Routes>
+              {/* http://localhost:3000/ */}
+              <Route path='/' element={ <ListCmyEmployeeComponent />}></Route>
+               {/* http://localhost:3000/employees */}
+              <Route path='/employees' element={<ListCmyEmployeeComponent />}></Route>
+              {/* http://localhost:3000/employees/create/employee */}
+              <Route path='/employees/create/employee' element={<CmyEmployeeComponent />}></Route>
+          </Routes>
+          <FooterComponent />
+        </div>  
+      </BrowserRouter>
+      
     </>
   )
 }
