@@ -4,6 +4,7 @@ const REST_API_BASE_URL = "http://localhost:8020/api/v1/cmy-employees";
 const REST_API_CREATE = REST_API_BASE_URL + "/create/cmy-employee";
 const REST_API_DETAIL = REST_API_BASE_URL + "/detail/cmy-employee/";
 const REST_API_UPDATE = REST_API_BASE_URL + "/update/cmy-employee/";
+const REST_API_DELETE = REST_API_BASE_URL + "/delete/cmy-employee/";
 
 export const listCmyEmployees = async () => {
   try {
@@ -48,14 +49,13 @@ export const updateCmyEmployee = async (cmyEmployee, id) => {
     }
 };
   
-// Add this function to your CmyEmployeeService.js file
 export const deleteCmyEmployee = async (id) => {
     try {
       if (!id) {
         throw new Error('ID is required for deleting the employee.');
       }
   
-      const response = await axios.delete(`${REST_API_BASE_URL}/delete/cmy-employee/${id}`);
+      const response = await axios.delete(`${REST_API_DELETE}${id}`);
   
       return response.data;
     } catch (error) {

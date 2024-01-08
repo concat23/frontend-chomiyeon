@@ -2,11 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { listCmyEmployees, deleteCmyEmployee as deleteEmployee } from '../services/CmyEmployeeService';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { URL_CREATE, URL_UPDATE } from '../services/ConstantRoute'
 
 function ListCmyEmployeeComponent() {
+ 
   const [cmyEmployees, setCmyEmployees] = useState([]);
+  
   const navigator = useNavigate();
 
+  // Get list
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,15 +24,17 @@ function ListCmyEmployeeComponent() {
     fetchData();
   }, []);
 
+  // Create
   function addNewCmyEmployee() {
-    navigator('/employees/create/employee');
+    navigator(URL_CREATE);
   }
 
   // Update
   function updateCmyEmployee(id) {
-    navigator(`/employees/update/employee/${id}`);
+    navigator(`${URL_UPDATE}${id}`);
   }
 
+  // Delete
   const deleteCmyEmployee = async (id) => {
     try {
       // Perform the delete action

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../components/style.css';
 import { createCmyEmployee, getCmyEmployeeById, updateCmyEmployee } from '../services/CmyEmployeeService';
 import { useNavigate, useParams } from 'react-router-dom';
-
+import { URL_LIST } from '../services/ConstantRoute'
 function CmyEmployeeComponent() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -20,6 +20,7 @@ function CmyEmployeeComponent() {
   const navigator = useNavigate();
   const { id } = useParams();
 
+  // Get detail
   useEffect(() => {
     // If there is an id, fetch the employee data for updating
     if (id) {
@@ -54,7 +55,7 @@ function CmyEmployeeComponent() {
       if (validateForm()) { // Add the validateForm call here
         const response = await saveFunction(cmyEmployee, id); // Ensure id is correctly passed here
         console.log(response);
-        navigator('/employees');
+        navigator(URL_LIST);
       } else {
         console.error('Validation failed. Please check the form fields.');
       }
