@@ -1,7 +1,7 @@
 // Signup.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signup } from '../../../services/ApiAdminUtils';
+import { signup } from '../../../services/ApiAuthenService';
 import './../signup/style.css'; // Import the CSS file
 
 const Signup = () => {

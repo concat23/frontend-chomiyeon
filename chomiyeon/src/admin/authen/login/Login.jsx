@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login as apiLogin } from '../../../services/ApiAdminUtils'; // Rename the imported function
-import { useAuth } from '../../../common/AuthProvider'; // Update the import path
+import { login as apiLogin } from '../../../services/ApiAuthenService'; // Rename the imported function
+import { useAuth } from '../../common/AuthProvider'; // Update the import path
 import './../login/style.css'; // Import the CSS file
 
 const Login = () => {

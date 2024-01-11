@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import '../components/style.css';
-import { createCmyEmployee, getCmyEmployeeById, updateCmyEmployee } from '../services/CmyEmployeeService';
+import './style.css';
+import { createCmyEmployee, getCmyEmployeeById, updateCmyEmployee } from '../../services/ApiCmyEmployeeService';
 import { useNavigate, useParams } from 'react-router-dom';
-import { URL_LIST } from '../services/ConstantAdminRoute'
-function CmyEmployeeComponent() {
+import { URL_LIST } from '../../services/ConstantAdminRoute'
+function CmyEmployeeDetail() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -171,4 +171,4 @@ function CmyEmployeeComponent() {
   );
 }
 
-export default CmyEmployeeComponent;
+export default CmyEmployeeDetail;

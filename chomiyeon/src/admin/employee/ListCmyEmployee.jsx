@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { listCmyEmployees, deleteCmyEmployee as deleteEmployee } from '../services/CmyEmployeeService';
+import { listCmyEmployees, deleteCmyEmployee as deleteEmployee } from '../../services/ApiCmyEmployeeService';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { URL_CREATE, URL_UPDATE } from '../services/ConstantAdminRoute'
+import { URL_CREATE, URL_UPDATE } from '../../services/ConstantAdminRoute'
 
-function ListCmyEmployeeComponent() {
+function ListCmyEmployee() {
  
   const [cmyEmployees, setCmyEmployees] = useState([]);
   
@@ -85,4 +85,4 @@ function ListCmyEmployeeComponent() {
   );
 }
 
-export default ListCmyEmployeeComponent;
+export default ListCmyEmployee;
