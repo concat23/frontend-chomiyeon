@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { listCmyEmployees, deleteCmyEmployee as deleteEmployee } from '../services/CmyEmployeeService';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { URL_CREATE, URL_UPDATE } from '../services/ConstantRoute'
+import { URL_CREATE, URL_UPDATE } from '../services/ConstantAdminRoute'
 
 function ListCmyEmployeeComponent() {
  

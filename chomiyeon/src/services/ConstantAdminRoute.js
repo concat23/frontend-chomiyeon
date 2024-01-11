@@ -1,0 +1,5 @@
+export const URL_LIST      = '/admin/employees'
+export const URL_CREATE    = '/admin/employees/create/employee'
+export const URL_UPDATE    = '/admin/employees/update/employee/'
+export const URL_DETAIL    = ''
+export const URL_DELTE     = ''

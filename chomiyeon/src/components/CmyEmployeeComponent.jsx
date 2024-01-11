@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../components/style.css';
 import { createCmyEmployee, getCmyEmployeeById, updateCmyEmployee } from '../services/CmyEmployeeService';
 import { useNavigate, useParams } from 'react-router-dom';
-import { URL_LIST } from '../services/ConstantRoute'
+import { URL_LIST } from '../services/ConstantAdminRoute'
 function CmyEmployeeComponent() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');

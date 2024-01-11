@@ -1,5 +1,5 @@
-/* ../../admin/authen/style.css */
-.login-container {
+/* Signup.css */
+.signup-container {
     max-width: 400px;
     margin: auto;
     padding: 20px;
@@ -9,23 +9,23 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
-  .login-container h2 {
+  .heading {
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: #333;
   }
   
-  .login-container form {
+  .form {
     display: flex;
     flex-direction: column;
   }
   
-  .login-container label {
+  .label {
     margin-bottom: 8px;
   }
   
-  .login-container input {
+  .input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -35,7 +35,7 @@
     font-size: 16px;
   }
   
-  .login-container button {
+  .button {
     background-color: #4caf50;
     color: white;
     padding: 12px;
@@ -46,7 +46,7 @@
     transition: background-color 0.3s;
   }
   
-  .login-container button:hover {
+  .button:hover {
     background-color: #45a049;
   }
   
