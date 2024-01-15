@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Transition } from 'react-transition-group';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import DashboardCustomizeOutlinedIcon from '@mui/icons-material/DashboardCustomizeOutlined';
 import DirectionsCarFilledOutlinedIcon from '@mui/icons-material/DirectionsCarFilledOutlined';
@@ -22,18 +23,13 @@ const menuList = [
   {
     title:"Overview",
     icon: <DashboardCustomizeOutlinedIcon />,
-    state: "inbox"
+    state: "overview"
   },
   {
     title:"Notification",
     icon: <NotificationsOutlinedIcon />,
     state: "notification"
-  },
-  {
-    title:"Inbox",
-    icon: <MailOutlinedIcon />,
-    state: "inbox"
-  },
+  }
 ]
 
 const investmentMenuList = [
@@ -74,22 +70,30 @@ const serviceMenuList = [
 
 export const Sidebar = ({sidebarWidth}) => {
 
-  const activeState = "Overview"
+  const [activeState, setActiveState] = useState(menuList.length > 0 ? menuList[0].state : null);
+
+  const handleMenuItemClick = (state) => {
+    setActiveState(state);
+  };
+  
 
   const container = window !== undefined ? () => window.document.body  : undefined
 
   const MenuItem = (props) =>{
+    console.log('isActive:', props.isActive);
     return (
       <ListItem key={props.index} disableGutters disablePadding sx={{ py: 0.5 }}>
         <ListItemButton sx={{
             borderRadius: "10px",
-            bgcolor: props.isActive ? '#388e3c' :'',
+            bgcolor: props.isActive ? '#388e3c' : '',
             color: props.isActive ? colors.common.white : '',
-            "&:hover": {  
-              bgcolor: props.isActive ? colors.green[700]  : '',
+            "&:hover": {
+              bgcolor: props.isActive ? colors.green[700] : '',
               color: props.isActive ? colors.common.white : '',
             }
-          }}>
+          }}
+          onClick={() => handleMenuItemClick(props.item.state)}
+          >
 
             <ListItemIcon sx={{ minWidth: "30px", 
                               color:props.isActive  ? colors.common.white : ''}} >
